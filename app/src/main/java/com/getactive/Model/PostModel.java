@@ -29,6 +29,8 @@ public class PostModel extends PostModelId implements Serializable {
     public PostModel() {
     }
 
+
+
     public PostModel(String user_id, String title, Date timestamp, String image_url, String desc) {
         this.user_id = user_id;
         this.title = title;

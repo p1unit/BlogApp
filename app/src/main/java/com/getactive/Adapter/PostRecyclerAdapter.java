@@ -73,7 +73,7 @@ public class PostRecyclerAdapter  extends RecyclerView.Adapter<PostRecyclerAdapt
                         switch (item.getItemId()) {
                             case R.id.delete:
                                 holder.deletePost(blogPostId,pos);
-                                holder.deletePost(blogPostId,pos);
+//                                holder.deletePost(blogPostId,pos);
                                 break;
                             case R.id.update:
                                 holder.update(blogPostId);
@@ -188,27 +188,7 @@ public class PostRecyclerAdapter  extends RecyclerView.Adapter<PostRecyclerAdapt
                 Config.toastShort(ApplicationContextProvider.getContext(),"You can not delete other's Post");
                 return;
             }
-
-            firebaseFirestore.collection("Posts").document(post_id).delete()
-                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            post_list.remove(pos);
-//                            notifyItemRemoved(pos);
-                            notifyDataSetChanged();
-//                            notifyItemRangeChanged(pos, post_list.size());
-                            mView.setVisibility(View.GONE);
-                            Config.toastShort(ApplicationContextProvider.getContext(), "Post successfully deleted!");
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Config.toastShort(ApplicationContextProvider.getContext(), "Error deleting Post");
-                        }
-                    });
-
-//            iface.deletePost(getAdapterPosition(),post_id);
+            iface.deletePost(getAdapterPosition(),post_id);
         }
 
     }

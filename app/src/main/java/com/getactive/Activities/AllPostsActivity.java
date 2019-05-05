@@ -97,6 +97,28 @@ public class AllPostsActivity extends AppCompatActivity implements View.OnClickL
             }
         });
 
+        addPost();
+
+
+    }
+
+    private void closeSubMenusFab(){
+        layoutFabEdit.setVisibility(View.INVISIBLE);
+        layoutFabPhoto.setVisibility(View.INVISIBLE);
+        fab.setImageResource(R.drawable.ic_add_white_24dp);
+        fabExpanded = false;
+    }
+
+    //Opens FAB submenus
+    private void openSubMenusFab(){
+        layoutFabEdit.setVisibility(View.VISIBLE);
+        layoutFabPhoto.setVisibility(View.VISIBLE);
+        fab.setImageResource(R.drawable.ic_clear_white_24dp);
+        fabExpanded = true;
+    }
+
+    public void addPost(){
+
         Query firstQuery = firebaseFirestore.collection("Posts").orderBy("timestamp", Query.Direction.DESCENDING).limit(5);
         firstQuery.addSnapshotListener(this, new EventListener<QuerySnapshot>() {
             @Override
@@ -131,21 +153,6 @@ public class AllPostsActivity extends AppCompatActivity implements View.OnClickL
             }
 
         });
-    }
-
-    private void closeSubMenusFab(){
-        layoutFabEdit.setVisibility(View.INVISIBLE);
-        layoutFabPhoto.setVisibility(View.INVISIBLE);
-        fab.setImageResource(R.drawable.ic_add_white_24dp);
-        fabExpanded = false;
-    }
-
-    //Opens FAB submenus
-    private void openSubMenusFab(){
-        layoutFabEdit.setVisibility(View.VISIBLE);
-        layoutFabPhoto.setVisibility(View.VISIBLE);
-        fab.setImageResource(R.drawable.ic_clear_white_24dp);
-        fabExpanded = true;
     }
 
     public void loadMorePost(){
@@ -204,22 +211,24 @@ public class AllPostsActivity extends AppCompatActivity implements View.OnClickL
 
         // Todo Fix the Bug
 
-//        firebaseFirestore.collection("Posts").document(post_id).delete()
-//                .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                    @Override
-//                    public void onSuccess(Void aVoid) {
-//                        Config.toastShort(ApplicationContextProvider.getContext(), "Post successfully deleted!");
-//                        // ToDO - Due to error
-//                        startActivity(new Intent(ApplicationContextProvider.getContext(),AllPostsActivity.class));
-//                        finish();
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Config.toastShort(ApplicationContextProvider.getContext(), "Error deleting Post");
-//                    }
-//                });
+        firebaseFirestore.collection("Posts").document(post_id).delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Config.toastShort(ApplicationContextProvider.getContext(), "Post successfully deleted!");
+                        // ToDO - Due to error
+                        post_list.remove(position);
+                        post_list_view.getAdapter().notifyDataSetChanged();
+                        isFirstPageFirstLoad=true;
+                        addPost();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Config.toastShort(ApplicationContextProvider.getContext(), "Error deleting Post");
+                    }
+                });
 
 
     }
