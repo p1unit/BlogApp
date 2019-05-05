@@ -38,6 +38,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:18.2.0'
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.6.+'
     implementation 'id.zelory:compressor:2.1.0'
+
 }
 
 
