@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.UpdatePhotoPost">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            app:theme="@style/ThemeOverlay.AppCompat.Light"
+            android:layout_height="wrap_content"
+            app:titleMarginStart="12dp"
+            app:contentInsetLeft="7dp"
+            app:contentInsetStart="7dp"
+            app:contentInsetRight="7dp"
+            app:contentInsetEnd="0dp">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:id="@+id/backbtn"
+                android:clickable="true"
+                android:padding="10dp"
+                android:focusable="true"
+                android:background="?selectableItemBackgroundBorderless"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/left_arrow"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:text="Add New Post"
+                android:paddingStart="10dp"
+                tools:ignore="RtlSymmetry" />
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:id="@+id/update_post_image"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/temp" />
+
+    <EditText
+        android:id="@+id/update_post_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/post_title_hint"
+        android:inputType="textMultiLine"
+        android:maxLength="125"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/update_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/colorAccent"
+        android:padding="16dp"
+        android:text="@string/update_btn_hint"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+
+</LinearLayout>

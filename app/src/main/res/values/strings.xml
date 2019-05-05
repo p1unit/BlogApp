@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Getactive</string>
+    <string name="post_desc_hint">Enter The Description</string>
+    <string name="new_post_btn_hint">Post The Article</string>
+    <string name="post_title_hint">Enter the Title</string>
+    <string name="add_text_post">Add Text Post</string>
+    <string name="photo_post">Add Photo Post</string>
+    <string name="update_btn_hint">Update Post</string>
+    <string name="add_user">Add the User</string>
+</resources>

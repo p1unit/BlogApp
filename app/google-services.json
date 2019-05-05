@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "772489868724",
+    "firebase_url": "https://getactive-bbeb7.firebaseio.com",
+    "project_id": "getactive-bbeb7",
+    "storage_bucket": "getactive-bbeb7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772489868724:android:268240f05479d72e",
+        "android_client_info": {
+          "package_name": "com.getactive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772489868724-v2t7jvl9fl8q7dctk2hoofgq0agfnl2s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.getactive",
+            "certificate_hash": "ebfe0dcec13b494e041984f7db5919b708a5a924"
+          }
+        },
+        {
+          "client_id": "772489868724-vnkvkbturt8j1i8qqduh807p5oai2jt5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBt7TKl9cU8Y6QMWmGlsgtyd0xdfWgmrSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772489868724-vnkvkbturt8j1i8qqduh807p5oai2jt5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

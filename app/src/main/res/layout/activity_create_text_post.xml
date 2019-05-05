@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.CreateTextPost">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            app:theme="@style/ThemeOverlay.AppCompat.Light"
+            android:layout_height="wrap_content"
+            app:titleMarginStart="12dp"
+            app:contentInsetLeft="7dp"
+            app:contentInsetStart="7dp"
+            app:contentInsetRight="7dp"
+            app:contentInsetEnd="0dp">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:id="@+id/backbtn"
+                android:clickable="true"
+                android:padding="10dp"
+                android:focusable="true"
+                android:background="?selectableItemBackgroundBorderless"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/left_arrow"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="Add New Post"
+                android:paddingStart="10dp"
+                tools:ignore="RtlSymmetry" />
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <EditText
+        android:id="@+id/post_desc"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/post_desc_hint"
+        android:inputType="textMultiLine"
+        android:maxLength="200"/>
+
+    <EditText
+        android:id="@+id/post_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/post_title_hint"
+        android:inputType="textMultiLine"
+        android:maxLength="130"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/post__btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/colorAccent"
+        android:padding="16dp"
+        android:text="@string/new_post_btn_hint"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>
